@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar >
+      <ion-buttons slot="start">
+          <ion-button color="primary">
+            <ion-icon slot="icon-only" name="person-add"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+    <ion-title color="primary">  เพิ่มบัญชีด้วยตนเอง</ion-title>
+    <!-- <ion-icon class="icon-size" slot="start" name="person-add" color="primary"></ion-icon> -->
+  </ion-toolbar>
+</ion-header>
+<ion-content >
+  <form [formGroup]="dataForm" (ngSubmit)="addAccount()">
+    <ion-item>
+      <ion-label position="floating">ชื่อบัญชีผู้ใช้งาน <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input required formControlName="username"  type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">รหัสลับ <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input required formControlName="secret"  type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">ชื่อองค์กร <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input required formControlName="orgname"  type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">ชื่อผู้ผลิตซอฟต์แวร์ <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input required formControlName="issuer"  type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>โหมดการใช้งาน<ion-text color="danger">*</ion-text></ion-label>
+      <ion-select  interface="popover" placeholder="Select One" formControlName="mode" >
+        <ion-select-option value="num6" selected>num6</ion-select-option>
+        <ion-select-option  value="mix6base40">mix6base40</ion-select-option>
+        <ion-select-option value="th6base42">th6base42</ion-select-option>
+        <ion-select-option value="th6base60">th6base60</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>ล๊อคฮาร์ดแวร์<ion-text color="danger">*</ion-text></ion-label>
+      <ion-select  interface="popover" placeholder="Select One" formControlName="hardlock" >
+        <ion-select-option  value="imeisn" selected>IMEISN</ion-select-option>
+        <ion-select-option  value="none">NONE</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>เวลาที่แสดง OTP<ion-text color="danger">*</ion-text></ion-label>
+      <ion-select  interface="popover" placeholder="Select One" formControlName="round">
+        <ion-select-option  value="30" selected>30 นาที</ion-select-option>
+        <ion-select-option  value="60">60 นาที</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <div class="ion-text-center">
+      <ion-button  color="primary" type="submit" [disabled]="dataForm.invalid" fill="solid">
+        ตกลง
+      </ion-button>
+      <ion-button  color="primary" (click)="dismiss()" >
+        ยกเลิก
+      </ion-button>
+    </div>
+  </form>
+</ion-content>

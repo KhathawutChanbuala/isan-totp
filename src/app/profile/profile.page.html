@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button ></ion-menu-button>
+    </ion-buttons>
+    <ion-title>ISAN TOTP</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="presentPopover($event)">
+            <ion-icon  name="more"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    
+      <div *ngIf="accounts.length < 1" class="ion-text-center">
+        <h4>ไม่มีบัญชีผู้ใช้!!</h4>
+        โปรดเพิ่มข้อมูล
+      </div>
+      <div *ngIf="accounts.length > 0" class="ion-text-center">
+        <h5>เลือกบัญชีของคุณเพื่อสร้างรหัสความปลอดภัย<br>เมื่อมีการเข้าสู่ระบบ</h5> 
+      </div>
+         
+      <ion-list>
+
+      <ion-item-sliding *ngFor="let acc of accounts">
+      <!-- <ion-card button  *ngFor="let acc of accounts" (press)="deleteAccount(acc.id)" (click)="genOtpPage(acc)" > -->
+        <ion-item   (click)="genOtpPage(acc)">
+          <ion-avatar slot="start" >
+            <img src="../../assets/icon/person.svg" />
+          </ion-avatar>
+          <ion-label color="primary">
+              <h1>{{acc.username}}</h1>
+              <h4>ชื่อองค์กร: {{acc.orgname}}</h4>
+          </ion-label>
+        </ion-item>
+      <!-- </ion-card> -->
+      <ion-item-options side="end">
+          <ion-item-option  color="danger" (click)="deleteAccount(acc.id)">Delete</ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+      
+    </ion-list>
+      
+    
+    <!-- fab placed in the center of the content with a list on each side -->
+    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+      <ion-fab-button (click)="presentActionSheet()">
+        <ion-icon  name="add"></ion-icon>
+      </ion-fab-button>
+     
+    </ion-fab>
+  </ion-content>

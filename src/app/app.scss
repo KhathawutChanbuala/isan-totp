@@ -4,3 +4,18 @@
 // styles are for the entire app and not just one component. Additionally, this 
 // file can hold Sass mixins, functions, and placeholder classes to be imported 
 // and used throughout the application.
+.profile-image {
+
+	img {
+		//border-radius: 10%;
+		margin-top: 20px;
+		margin-left: auto;
+		margin-right: auto;
+		//border: 4px solid $SIDEMENU_TRANSPARENCY;
+		//border-color: #06881C;
+		display: block;
+		width: 25%;
+		height: auto;
+	}
+
+}

@@ -1,0 +1,45 @@
+.scroll-content{
+  padding: 0px !important;
+}
+// .box{ margin: 0% 5%; padding: 0px 10px; font-size: 1.4rem; height: 60%; background-color: #fff; opacity: 1 !important; margin-top: 20%; border: 1px solid gray; }
+
+round-progress{
+  //margin-top: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  //text-align: center;
+}
+// .main_box{
+//     height: 100%;
+// }
+[col-6]{
+  text-align: center;
+}
+.range-md .range-knob, .range-ios .range-knob{
+  width: 30px;
+  height: 30px;
+}
+.range-md .range-bar, .range-ios .range-bar{
+  top: 28px;
+}
+.label-md, .label-ios{ margin-top: 16px !important;}
+.current {
+  // position: absolute;
+  // margin: 34% 25% 0% 35%;
+  // margin-top: 20%;
+  // margin-bottom: -43%;
+  margin: auto;
+  margin-top: 25%;
+  margin-bottom: -25%;
+  font-weight: 400;
+  font-size: 2rem;
+  text-align: center;
+  
+}
+
+.otp{
+  font-size: 40px;
+  margin-top: 15%;
+  margin-bottom: 15%;
+ // padding-bottom: 15%;
+}

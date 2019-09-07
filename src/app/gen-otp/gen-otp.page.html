@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>ISAN TOTP</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-text color="primary" class="ion-text-center">
+    <h1>One-Time Password</h1>
+  </ion-text>
+  <ion-text color="danger" class="ion-text-center" >
+      <h1 class="otp">{{otp}}</h1>
+    </ion-text>
+  <!-- <ion-footer> -->
+    <!-- <ion-toolbar> -->
+      
+           <div class="current">{{ timeNow }}</div>
+          <round-progress
+          [current]="timeNow"
+          [max]="max"
+          [color]="'#45ccce'"
+          [background]="'#eaeaea'"
+          [radius]="80"
+          [stroke]="20"
+          [semicircle]="false"
+          [rounded]="true"
+          [clockwise]="true"
+          [responsive]="false"
+          [animation]="'easeOutElastic'"
+          [animationDelay]="0"></round-progress>
+          <ion-text  class="ion-text-center">
+            <h4>รหัสความปลอดภัยนี้<br>จะหมดอายุใน {{max}} วินาที</h4>
+          </ion-text>
+    <!-- </ion-toolbar> -->
+  <!-- </ion-footer> -->
+
+</ion-content>

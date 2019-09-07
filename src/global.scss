@@ -9,3 +9,22 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+
+.myActionSheet{
+    --color:#3880ff;
+}
+.myActionSheetCancel {
+    --color:#f04141;
+}
+.myActionSheetDelete {
+    --color:#f04141;
+}
+ion-alert
+{
+    --background        : #2c3e50 !important;
+    --ion-text-color    : white !important;
+    --ion-color-step-550: white !important;
+}
+.icon-color{
+    color: #f04141 !important;
+}
